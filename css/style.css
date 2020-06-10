@@ -1,3 +1,4 @@
+/* Navbar styles & overrides */
 .navbar--home {
 	display: flex;
 	flex-wrap: wrap;
@@ -20,6 +21,7 @@
 	justify-content: center;
 }
 
+/* Hero styles & overrides */
 .hero--home {
 	background-color: black;
 	background-image: url('../img/hero-bg.png');
@@ -49,6 +51,7 @@
 	text-transform: uppercase;
 }
 
+/* Reviews section */
 .reviews__container {
 	background-color: #f4f5f7;
 	padding: 3rem 0rem;
@@ -77,6 +80,7 @@
 	margin-bottom: 15px;
 }
 
+/* Carousel styles & overrides */
 .slick-arrow {
 	z-index: 10;
 }
@@ -101,4 +105,76 @@
 
 .slick-next:before {
 	right: 64px;
+}
+
+/* Grid styles */
+.grid-card {
+	display: flex;
+	flex-direction: column;
+	height: 280px;
+	box-shadow: 0 7px 12px rgba(46, 49, 52, 0.3);
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.grid-card__copy-container,
+.grid-card__image-section {
+	flex-basis: 50%;
+}
+
+.grid-card__copy-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 16px;
+	background-color:#fff;
+}
+
+.grid-card__copy-title-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.grid-card__copy-title {
+	flex-basis: 70%;
+}
+
+.grid-card__icon {
+	max-height: 28px;
+	max-width: 28px;
+	background-size: cover;
+}
+
+.grid-card__copy-details {
+	display: flex;
+	font-size: 10px;
+	letter-spacing: 0.3px;
+	line-height: 12px;
+	text-transform: uppercase;
+	color: #2e3134;
+}
+
+.grid-card__copy-details div:nth-child(1) {
+	margin-right: 8px;
+} 
+
+.grid-card__image-section {
+	display: flex;
+	justify-content: flex-end;
+	background-color: dodgerblue;
+}
+
+.grid-card__workouts-section {
+	display: flex;
+	flex-basis: 40%;
+	background-color: rgba(0, 12, 40, 0.54);
+	height: 100%;
+}
+
+.grid-card__view-details {
+	color: #0069d2;
+	letter-spacing: 0.5px;
+	line-height: 16px;
+	text-transform: uppercase;
+	font-size: 14px;
 }
