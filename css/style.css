@@ -1,0 +1,27 @@
+.navbar--home {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar-menu--top {
+    flex-basis: 100%;
+}
+
+.navbar-menu--hero {
+    align-items: center;
+}
+
+.navbar-brand--hero {
+    align-items: center;
+}
+
+.navbar-start--hero {
+    flex-basis: 100%;
+    justify-content: center;
+}
+
+.hero--home {
+    background-color: black;
+    background-image: url('../img/hero-bg.png');
+    background-size: cover;
+}
