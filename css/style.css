@@ -44,12 +44,13 @@ body {
 
 .navbar-brand--hero {
 	align-items: center;
-	flex-basis: 5%;
+	cursor: pointer;
 }
 
 .navbar-brand-copy {
 	font-size: 26px;
 	letter-spacing: 1px;
+	color: black;
 }
 
 .navbar-start--hero {
@@ -63,6 +64,10 @@ body {
 	line-height: 14px;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.navbar-end--hero {
+	flex-basis: 13%;
 }
 
 /* Mobile nav */
@@ -86,6 +91,7 @@ body {
 
 .navbar-brand--mobile {
 	align-items: center;
+	cursor: pointer;
 }
 
 .navbar__hamburger {
@@ -529,6 +535,7 @@ body {
 
 .footer__copy-container {
 	text-align: center;
+	cursor: pointer;
 }
 
 .footer__copy-container li {
@@ -537,6 +544,10 @@ body {
 
 .footer__copy-container li:nth-child(1) {
 	font-weight: 700;
+}
+
+.footer__copy-container li:hover {
+	color: #3273dc
 }
 
 @media only screen and (max-width: 768px) {
@@ -574,9 +585,19 @@ body {
 	line-height: 16px;
 }
 
+.footer__legal-copy-container p {
+	cursor: pointer;
+}
+
+.footer__legal-copy-container p:hover {
+	color: #3273dc;
+}
+
 @media only screen and (max-width: 768px) {
 	.footer__legal-copy-container {
-		font-size: 11px;
+		display: flex;
+		flex-direction: column;
+		font-size: 12px;
 	}
 }
 

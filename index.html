@@ -17,13 +17,13 @@
 	<body id="home">
 		<nav class="navbar navbar--mobile is-fixed-top">
 			<div class="navbar-menu is-active">
-				<div class="navbar-brand navbar-brand--mobile">
-					<a class="navbar-item" href="#">
+				<a href="#" class="navbar-brand navbar-brand--mobile">
+					<span class="navbar-item" href="#">
 						<img src="img/logos/brand.png" width="75" height="24">
-					</a>
+					</span>
 					<span class="navbar-brand-copy">COACH</span>
-				</div>
-			</div>
+				</a>
+			</a>
 		</nav>
 
 		<div class="navbar__hamburger">
@@ -31,7 +31,7 @@
 			<div class="line" id="two"></div>
 			<div class="line" id="three"></div>
 		</div>
-		
+
 		<div class="mobile-menu">
 			<ul class="mobile-menu__items">
 				<li><a href="#">BLOG</a></li>
@@ -56,12 +56,12 @@
 			</div>
 
 			<div class="navbar-menu navbar-menu--hero">
-				<div class="navbar-brand navbar-brand--hero">
-					<a class="navbar-item" href="#"">
+				<a href="#" class="navbar-brand navbar-brand--hero">
+					<span class="navbar-item" href="#">
 						<img src="img/logos/brand.png" width="75" height="24">
-					</a>
+					</span>
 					<span class="navbar-brand-copy">COACH</span>
-				</div>
+				</a>
 				<div class="navbar-start navbar-start--hero">
 					<a class="navbar-item">
 						EXERCISE
@@ -80,7 +80,7 @@
 					</a>
 				</div>
 		
-				<div class="navbar-end">
+				<div class="navbar-end navbar-end--hero">
 					<div class="navbar-item">
 						<div class="buttons">
 							<a class="button button--sign-up">
@@ -91,6 +91,7 @@
 				</div>
 			</div>
 		</nav>
+
 		<section class="hero is-fullheight-with-navbar hero--home">
 			<div class="hero-body">
 				<div class="container">
@@ -100,6 +101,7 @@
 								<h1 class="title hero-copy__title">
 									The best personal training, right in your own home
 								</h1>
+
 								<button class="button hero-copy__button">Join iFit Coach</button>
 							</div>
 						</div>
@@ -107,27 +109,31 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="section reviews__container">
 			<div class="reviews__carousel">
-				<!-- Ideally, this could be done with a loop, ideally with an HTML template system. For simplicity's sake, this has been done the naive, repetitive, but simple way -->
+				<!-- Ideally, this could be done with a loop, ideally with an HTML template system. For time's sake, this has been done repetitiously -->
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
 						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
 						<p class="reviews__copy">"Literally transports you from home to wherever you choose to run."</p>
 					</div>
 				</div>
+
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
 						<img class="reviews__item-logo" src="img/logos/mashable-logo.png" width="133" height="23">
 						<p class="reviews__copy">"Breathes new life into a tired, old running routine."</p>
 					</div>
 				</div>
+
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
 						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
 						<p class="reviews__copy">"Brought my dog back to life."</p>
 					</div>
 				</div>
+
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
 						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
@@ -136,11 +142,13 @@
 				</div>
 			  </div>
 		</section>
+
 		<section class="section">
 			<div class="container grid-container">
 				<div id="grid-roller" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 			</div>
 		</section>
+
 		<section class="section">
 			<div class="columns is-centered">
 				<div class="column is-5">
@@ -150,6 +158,7 @@
 			<div id="equipment-grid-roller" class="equipment-grid-container animate__animated">
 			</div>
 		</section>
+
 		<footer class="footer footer--home">
 			<div class="columns is-centered is-mobile">
 				<div class="column is-3">
@@ -160,6 +169,7 @@
 						<li>Careers</li>
 					</ul>
 				</div>
+
 				<div class="column is-3">
 					<ul class="footer__copy-container">
 						<li>Account</li>
@@ -167,6 +177,7 @@
 						<li>Create Account</li>
 					</ul>
 				</div>
+
 				<div class="column is-3">
 					<ul class="footer__copy-container">
 						<li>Support</li>
@@ -175,6 +186,7 @@
 					</ul>
 				</div>
 			</div>
+
 			<div class="columns is-centered footer__social-columns">
 				<div class="column is-4 footer__social-container">
 					<img src="img/logos/youtube.png" alt="youtube icon" height="40" width="40">
@@ -184,8 +196,9 @@
 					<img src="img/logos/instagram.png" alt="instagram icon" height="40" width="40">
 				</div>
 			</div>
+
 			<div class="columns is-centered footer__legal-columns">
-				<div class="column is-5 footer__legal-copy-container">
+				<div class="column is-9 footer__legal-copy-container">
 					<p>&copy; iFit.com. All Rights Reserved.</p>
 					<p>Privacy Policy</p>
 					<p>Terms of Use</p>
