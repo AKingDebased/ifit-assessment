@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>iFit</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+		/>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
@@ -21,27 +23,26 @@
 					</a>
 					<span class="navbar-brand-copy">COACH</span>
 				</div>
-				<div class="navbar-end">
-					<div class="navbar__hamburger">
-						<div class="line" id="one"></div>
-						<div class="line" id="two"></div>
-						<div class="line" id="three"></div>
-					</div>
-		
-					<div class="mobile-menu">
-						<ul class="mobile-menu__items">
-							<li><a href="#">BLOG</a></li>
-							<li><a href="#">NOURISH</a></li>
-							<li><a href="#">SHOP</a></li>
-							<li><a href="#">EXERCISE</a></li>
-							<li><a href="#">NUTRITION</a></li>
-							<li><a href="#">ACTIVITY</a></li>
-							<li><a href="#">SLEEP</a></li>
-						</ul>
-					</div>
-				</div>
 			</div>
 		</nav>
+
+		<div class="navbar__hamburger">
+			<div class="line" id="one"></div>
+			<div class="line" id="two"></div>
+			<div class="line" id="three"></div>
+		</div>
+		
+		<div class="mobile-menu">
+			<ul class="mobile-menu__items">
+				<li><a href="#">BLOG</a></li>
+				<li><a href="#">NOURISH</a></li>
+				<li><a href="#">SHOP</a></li>
+				<li><a href="#">EXERCISE</a></li>
+				<li><a href="#">NUTRITION</a></li>
+				<li><a href="#">ACTIVITY</a></li>
+				<li><a href="#">SLEEP</a></li>
+			</ul>
+		</div>
 
 		<nav class="navbar navbar--home is-fixed-top">
 			<div class="navbar-menu navbar-menu--top">
@@ -111,20 +112,28 @@
 				<!-- Ideally, this could be done with a loop, ideally with an HTML template system. For simplicity's sake, this has been done the naive, repetitive, but simple way -->
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
-						<img class="review__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
+						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
 						<p class="reviews__copy">"Literally transports you from home to wherever you choose to run."</p>
 					</div>
 				</div>
 				<div class="reviews__item-container">
 					<div class="reviews__item-contents">
-						<img class="review__item-logo" src="img/logos/mashable-logo.png" width="133" height="23">
+						<img class="reviews__item-logo" src="img/logos/mashable-logo.png" width="133" height="23">
 						<p class="reviews__copy">"Breathes new life into a tired, old running routine."</p>
 					</div>
 				</div>
-				<div class="reviews__item-container"7></div>
-				<div class="reviews__item-container"7></div>
-				<div class="reviews__item-container"7></div>
-				<div class="reviews__item-container"7></div>
+				<div class="reviews__item-container">
+					<div class="reviews__item-contents">
+						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
+						<p class="reviews__copy">"Brought my dog back to life."</p>
+					</div>
+				</div>
+				<div class="reviews__item-container">
+					<div class="reviews__item-contents">
+						<img class="reviews__item-logo" src="img/logos/wired-logo.png" width="133" height="23">
+						<p class="reviews__copy">"Can actually cure cancer."</p>
+					</div>
+				</div>
 			  </div>
 		</section>
 		<section class="section">
@@ -138,7 +147,7 @@
 					<h3 class="equipment__title">Interested in our exciting iFit-enabled equipment?</h3>
 				</div>
 			</div>
-			<div id="equipment-grid-roller" class="equipment-grid-container">
+			<div id="equipment-grid-roller" class="equipment-grid-container animate__animated">
 			</div>
 		</section>
 		<footer class="footer footer--home">
