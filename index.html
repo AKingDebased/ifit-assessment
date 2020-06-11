@@ -99,9 +99,17 @@
 			  </div>
 		</section>
 		<section class="section">
-			<!-- DRY this up. Maybe the lodash _.template function? -->
 			<div class="container grid-container">
-	
+				<div id="grid-roller" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="columns is-centered">
+				<div class="column is-5">
+					<h3 class="equipment__title">Interested in our exciting iFit-enabled equipment?</h3>
+				</div>
+			</div>
+			<div id="equipment-grid-roller" class="equipment-grid-container">
 			</div>
 		</section>
 
@@ -112,10 +120,10 @@
 		crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
-				<!-- Using this "fake" script tag to hold our HTML template -->
+			<!-- Using this "fake" script tag to hold HTML templates -->
 		<script id="grid-card-template" type="template">
 			<div class="grid-card">
-				<div class="grid-card__image-section">
+				<div class="grid-card__image-section grid-card__image-section--<%= bgImgId %>">
 					<% if (workoutsNum) { %>
 					<div class="grid-card__workouts-section">
 						<span class="grid-card__workouts-amount"><%= workoutsNum %></span>
@@ -142,7 +150,12 @@
 				</div>
 			</div>
 		</script>
-
+		<script id="equipment-grid-template" type="template">
+			<div class="equipment__grid-card">
+				<img class="equipment__image" src="<%= imgSrc %>"> 
+				<h4 class="equipment__copy"><%= name %></h4>
+			</div>
+		</script>
 		<script>
 			// Init carousel
 			$('.reviews__carousel').slick({
@@ -154,48 +167,104 @@
 				centerPadding: '24px'
 			});
 
-			// Render grid & grid cards
+			// Render card grid
 			const cardsData = [{
 				title: 'Lake Inniscarra, Ireland — Pyramid',
 				hasDetails: true,
 				time: '30:53',
-				miles: '6,248'
+				miles: '6,248',
+				bgImgId: 1
 			}, {
 				title: 'Performance Series',
-				workoutsNum: 9
+				workoutsNum: 9,
+				bgImgId: 2
 			}, {
 				title: 'Slow Pulls and Fast Intervals',
 				time: '44:13',
-				miles: '9,948'
+				miles: '9,948',
+				bgImgId: 3
 			}, {
 				title: '20 Minutes to Toned',
-				workoutsNum: 12
+				workoutsNum: 12,
+				bgImgId: 4
 			}, {
 				title: 'Charles Race, Boston, Massachusetts',
 				time: '36:22',
-				miles: '8,6487'
+				miles: '8,6487',
+				bgImgId: 5
 			}, {
 				title: 'Full-Body HIIT Series',
-				workoutsNum: 12
+				workoutsNum: 12,
+				bgImgId: 6
 			}, {
 				title: 'Kafue River, Zambia—Power Stroke Pyramid',
 				time: '22:22',
-				miles: '4,660'
+				miles: '4,660',
+				bgImgId: 7
 			}, {
 				title: 'Shred & Burn Series',
-				workoutsNum: 16
-			}], itemsPerRow = 4, numRows = 2, rawTemplate = document.querySelector('#grid-card-template').innerHTML;
+				workoutsNum: 16,
+				bgImgId: 8
+			}];
+			
+			const gridItemsPerRow = 4, 
+				gridNumRows = 2, 
+				rawGridTemplate = document.querySelector('#grid-card-template').innerHTML, 
+				gridEl = document.querySelector('.grid-container');
 
-			renderCardGrid(cardsData, rawTemplate, itemsPerRow, numRows);
+			const cardGridNodes = generateCardGrid(
+				cardsData, 
+				rawGridTemplate, 
+				gridItemsPerRow, 
+				gridNumRows, 
+				// TODO: Might not even need these properties
+				['is-centered', 'is-variable', 'is-6'],
+				['title', 'workoutsNum', 'time', 'miles', 'hasDetails', 'bgImgId']);
+			
+			document.querySelector('#grid-roller').setAttribute('style', 'display:none');
+			cardGridNodes.forEach(rowNode => gridEl.appendChild(rowNode));
 
-			function renderCardGrid (cardsData, rawTemplate, itemsPerRow, numRows) {
-				const gridEl = document.querySelector('.grid-container'),
-					rowNodes = [];
+
+			// // Render equipment card grid
+			const equipmentData = [{
+				name: 'Treadmills',
+				bgImg: ''
+			}, {
+				name: 'Bikes',
+				bgImg: ''
+			}, {	
+				name: 'Ellipticals',
+				bgImg: ''
+			}, {
+				name: 'Strength',
+				bgImg: ''
+			}];
+
+			const equipmentGridItemsPerRow = 4,
+				equipmentNumRows = 1,
+				equipmentRawGridTemplate = document.querySelector('#equipment-grid-template').innerHTML,
+				equipmentGridEl = document.querySelector('.equipment-grid-container');
+				
+			const equipmentGridNodes = generateCardGrid(
+				equipmentData, 
+				equipmentRawGridTemplate, 
+				equipmentGridItemsPerRow, 
+				equipmentNumRows, 
+				[],
+				['name', 'imgSrc']
+			);
+			
+			document.querySelector('#grid-roller').setAttribute('style', 'display:none');
+			equipmentGridNodes.forEach(rowNode => equipmentGridEl.appendChild(rowNode));
+
+			// Generic grid rendering function
+			function generateCardGrid (cardsData, rawTemplate, itemsPerRow, numRows, rowClasses, properties) {
+				const rowNodes = [];
 
 				for (let i = 0; i < numRows; i++) {
 					let rowNode = document.createElement('div');
 					
-					rowNode.classList.add('columns', 'is-centered', 'is-variable', 'is-6');
+					rowNode.classList.add('columns', ...rowClasses);
 					rowNodes.push(rowNode);
 				}
 
@@ -206,20 +275,21 @@
 					let column = document.createElement('div');
 						
 					column.classList.add('column');
-					column.innerHTML = compiledGridCardTemplate({
-						title: card.title,
-						workoutsNum: card.workoutsNum,
-						time: card.time,
-						miles: card.miles,
-						hasDetails: card.hasDetails
-					});
+
+					const templateVariables = properties.reduce((accumulator, currentVal) => {
+						accumulator[currentVal] = card[currentVal];
+
+						return accumulator;
+					}, {});
+
+					column.innerHTML = compiledGridCardTemplate(templateVariables);
 
 					rowNodes[currentRow].appendChild(column);
 
 					if ((index + 1) / itemsPerRow === 1) currentRow++;
 				});
 
-				rowNodes.forEach(rowNode => gridEl.appendChild(rowNode));
+				return rowNodes;
 			}
 		</script>
 	</body>
